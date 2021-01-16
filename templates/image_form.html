@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block header_content %}
+    <title>Upload Waldo Image!</title>
+{% endblock header_content %}
+
+{% block content %}
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Upload</button>
+    </form>
+{% endblock content %}
+
+{% block scripts %}
+{% endblock scripts %}
