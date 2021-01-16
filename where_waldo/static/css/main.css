@@ -1,0 +1,45 @@
+body {
+    font-style: normal;
+    font-weight: 400;
+    background-size: 105% auto;
+    background: white url('../img/background.png') repeat-y top center;
+}
+
+.container {
+    position: relative;
+    padding: 20px;
+    padding-left: 5vw;
+    padding-right: 5vw;
+    max-width: 1150px;
+    margin: 100px auto;
+    background: white;
+    /* background-repeat: no-repeat; */
+    /* background-attachment: scroll; */
+    /* background-size: 110% 105%; */
+    /* background-position: center; */
+    border: 2px solid black;
+    border-image-slice: 50 50 50 50;
+    border-image-width: 20px 20px 20px 20px;
+    border-image-outset: 5px 5px 5px 5px;
+    border-image-repeat: repeat repeat;
+    border-image-source: url('../img/box.png');
+}
+
+.title {
+    position: relative;
+    width: 40%;
+    margin: -50px auto;
+}
+
+.title img {
+    top: -60px;
+    width: 100%;
+    text-align: center;
+    position: relative;
+}
+
+.well {
+    cursor: pointer;
+    background-color: #F5F5F5;
+    border: solid 1px lightgrey;
+}

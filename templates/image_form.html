@@ -1,17 +1,67 @@
 {% extends "base.html" %}
+{% load static %}
 
 {% block header_content %}
     <title>Upload Waldo Image!</title>
 {% endblock header_content %}
 
 {% block content %}
-    <h1>Where's Waldo?</h1>
-    <form method="post" enctype="multipart/form-data">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit">Upload</button>
-    </form>
+    <br>
+    <h5 style="font-weight: normal" class="text-center"><i>Where's Waldo</i> can be tricky. So why not let machine learning handle it for you?</h5>
+    <br>
+
+    <h2>Upload an image</h2>
+
+    <div class="well text-muted text-center js-upload-photos" style="padding-top: 4rem; padding-bottom: 4rem;">
+        <i class="fa fa-upload" style="font-size: 4rem;"></i>
+        <h3>Drop an image</h3>
+    </div>
+
+    <input type="file" name="img" accept="image/*" required="" id="id_img"
+           style="display: none;"
+           data-url="{% url 'upload' %}"
+           data-form-data='{"csrfmiddlewaretoken": "{{ csrf_token }}"}'>
+
+    <br>
+    <h1 class="text-center">OR</h1>
+    <br>
+
+    <h2>Select a recent image</h2>
+
+    <!--
+    <table id="gallery" class="table table-bordered">
+        <thead>
+            <tr>
+              <th>Photo</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for photo in photos %}
+            <tr>
+                <td><a href="{{ photo.file.url }}">{{ photo.file.name }}</a></td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    -->
+
+    <div class="modal fade" id="modal-progress" data-backdrop="static" data-keyboard="false">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4 class="modal-title">Uploading...</h4>
+          </div>
+          <div class="modal-body">
+            <div class="progress">
+              <div class="progress-bar" role="progressbar" style="width: 0%;">0%</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
 {% endblock content %}
 
 {% block scripts %}
+    <script src="{% static 'js/basic-upload.js' %}"></script>
 {% endblock scripts %}
