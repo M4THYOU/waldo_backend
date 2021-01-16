@@ -5,6 +5,7 @@
 {% endblock header_content %}
 
 {% block content %}
+    <h1>Where's Waldo?</h1>
     <form method="post" enctype="multipart/form-data">
         {% csrf_token %}
         {{ form.as_p }}

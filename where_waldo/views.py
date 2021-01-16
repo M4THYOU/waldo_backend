@@ -8,10 +8,6 @@ from .models import WaldoGame
 
 
 def index(request):
-    return HttpResponse("Hello, world. Let's find Waldo!")
-
-
-def waldo_image_upload_view(request):
     if request.method == 'POST':
         form = WaldoGameForm(request.POST, request.FILES)
         if form.is_valid():
