@@ -1,4 +1,5 @@
-import tensorflow as tf
+# import tensorflow as tf
+from tensorflow import saved_model, convert_to_tensor, newaxis
 import numpy as np
 import os
 from pathlib import Path
@@ -39,7 +40,7 @@ def inference(inputPath, outputPath, modelPath=DEFAULT_MODEL_PATH, labelPath=DEF
     #                      'exported-models/my_model/saved_model/variables/variables.data-00000-of-00001')
 
     # Load saved model and build the detection function
-    detect_fn = tf.saved_model.load(modelPath)
+    detect_fn = saved_model.load(modelPath)
 
     # Loading the label_map
     category_index = label_map_util.create_category_index_from_labelmap(labelPath, use_display_name=True)
@@ -55,9 +56,9 @@ def inference(inputPath, outputPath, modelPath=DEFAULT_MODEL_PATH, labelPath=DEF
         image_np = load_image_into_numpy_array(os.path.join(inputPath, imageName))
 
         # The input needs to be a tensor, convert it using `tf.convert_to_tensor`
-        input_tensor = tf.convert_to_tensor(image_np)
+        input_tensor = convert_to_tensor(image_np)
         # The model expects a batch of images, so add an axis with `tf.newaxis`
-        input_tensor = input_tensor[tf.newaxis, ...]
+        input_tensor = input_tensor[newaxis, ...]
 
         # input_tensor = np.expand_dims(image_np, 0)
         try:
