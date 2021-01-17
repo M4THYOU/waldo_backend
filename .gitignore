@@ -6,4 +6,3 @@ ENV/
 env.bak/
 venv.bak/
 /venv/
-waldo/secrets.py
