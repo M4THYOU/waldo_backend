@@ -10,7 +10,11 @@
 8. Run `python manage.py runserver` to start the server. It should work, you can verify this by going to http://localhost:8000/. If it doesn't work, well just fix what's broken. Use your critical thinking skills for this.
 
 # Development Process
+
 * Create your own dev branch with the following command `git checkout -b dev-<you name here>`. Obviously, replace `<you name here>` with your actual name.
 * Never ever commit to master branch. Work on the branch above and make a pull request when you want changes to be merged.
 * Message Matthew when you make a pull request, and he will merge it in.
 * We are using Bootstrap 4.1 as a frontend ~~framework~~ library: https://getbootstrap.com/docs/4.1/getting-started/introduction/ 
+
+# ML Model
+The tensorflow model used for this app can be found [here](https://github.com/wirooo/FolloWaldo)
