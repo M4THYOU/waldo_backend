@@ -23,33 +23,21 @@
            data-form-data='{"csrfmiddlewaretoken": "{{ csrf_token }}"}'>
 
     <br>
+    <div id="result">
+    </div>
+    <!--
     <h1 class="text-center">OR</h1>
     <br>
 
     <h2>Select a recent image</h2>
-
-    <!--
-    <table id="gallery" class="table table-bordered">
-        <thead>
-            <tr>
-              <th>Photo</th>
-            </tr>
-        </thead>
-        <tbody>
-            {% for photo in photos %}
-            <tr>
-                <td><a href="{{ photo.file.url }}">{{ photo.file.name }}</a></td>
-            </tr>
-            {% endfor %}
-        </tbody>
-    </table>
     -->
+
 
     <div class="modal fade" id="modal-progress" data-backdrop="static" data-keyboard="false">
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header">
-            <h4 class="modal-title">Uploading...</h4>
+            <h4 class="modal-title uploading-title">Uploading...</h4>
           </div>
           <div class="modal-body">
             <div class="progress">

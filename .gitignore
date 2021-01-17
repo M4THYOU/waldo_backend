@@ -6,4 +6,5 @@ ENV/
 env.bak/
 venv.bak/
 /venv/
-waldo/secrets.py
+db.sqlite3
+exported-models/my_model/saved_model/variables/variables.data-00000-of-00001
