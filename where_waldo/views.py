@@ -3,7 +3,6 @@ from django.shortcuts import render, redirect
 from django.http import HttpResponse, JsonResponse
 
 from os.path import basename
-from os import environ
 
 from .forms import WaldoGameForm
 from .models import WaldoGame
@@ -48,7 +47,6 @@ def upload(request):
 def success(request):
     # image_root = settings.MEDIA_ROOT + '/images/'
     # inference(image_root + '1.jpg', image_root)
-    print(environ['S3_BUCKET_NAME'])
     return HttpResponse('successfully uploaded')
 
 
