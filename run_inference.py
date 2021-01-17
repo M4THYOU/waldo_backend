@@ -34,7 +34,6 @@ def inference(inputPath, outputPath, modelPath=DEFAULT_MODEL_PATH, labelPath=DEF
     else:
         print('NOT downloading')
 
-    'exported-models/my_model/saved_model/variables/variables.data-00000-of-00001'
     # client.download_file(BUCKET_NAME,
     #                      'exported-models/my_model/saved_model/saved_model.pb',
     #                      'exported-models/my_model/saved_model/variables/variables.data-00000-of-00001')
